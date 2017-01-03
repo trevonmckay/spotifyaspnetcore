@@ -184,15 +184,14 @@ namespace SpotifyAspNetCore
                 httpRequest.Headers.Authorization = new AuthenticationHeaderValue("Bearer", this.ClientToken.Value.AccessToken);
             }
             httpRequest.Method = HttpMethod.Get;
-            var requestUri = new UriBuilder(API_BASE_URL + SEARCH_RESOURCE_PATH).Uri;
-            // TODO: Replace the following line
-            //requestUri.AddParameter("q", q, out requestUri);
+            var parameters = new Dictionary<string,string>();
+            parameters.Add("q", q);
             if (!string.IsNullOrWhiteSpace(types))
             {
-                // TODO: Replace the following line
-                //requestUri.AddParameter("type", types, out requestUri);
+                parameters.Add("type", types);
             }
-            httpRequest.RequestUri = requestUri;
+            var queryString = parameters.ToQueryString();
+            httpRequest.RequestUri = new UriBuilder(API_BASE_URL + SEARCH_RESOURCE_PATH).Uri;
             var response = await httpClient.SendAsync(httpRequest);
             var responseBody = await response.Content.ReadAsStringAsync();
 
