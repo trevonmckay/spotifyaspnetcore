@@ -170,7 +170,6 @@ namespace Spotify.NET
                 typeList.Add("track");
 
             var types = string.Join(",", typeList);
-            var q = WebUtility.UrlEncode(query).Replace("%20", "+");
 
             var httpClient = new HttpClient();
             var httpRequest = new HttpRequestMessage();
@@ -180,10 +179,10 @@ namespace Spotify.NET
             }
             httpRequest.Method = HttpMethod.Get;
             var requestUri = new UriBuilder(API_BASE_URL + SEARCH_RESOURCE_PATH);
-            requestUri.AddParameter("q", q);
+            requestUri.AddParameter("q", query);
             if (!string.IsNullOrWhiteSpace(types))
             {
-                requestUri.AddParameter("type", types);
+                requestUri.AddParameter("type", types, false);
             }
             httpRequest.RequestUri = requestUri.Uri;
             var response = await httpClient.SendAsync(httpRequest);

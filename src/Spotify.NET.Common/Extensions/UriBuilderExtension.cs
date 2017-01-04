@@ -38,7 +38,7 @@ namespace Spotify.NET.Common
 
             return collection;
         }
-        internal static void AddParameter(this UriBuilder self, string name, string value)
+        internal static void AddParameter(this UriBuilder self, string name, string value, bool urlEncodeValue = true, bool urlEncodeKey = true)
         {
             var _nameValueCollection = self.GetQueryStringAsNameValuePair();
             var nameValueCollection = new List<KeyValuePair<string, string>>();
@@ -57,8 +57,8 @@ namespace Spotify.NET.Common
                 var sb = new StringBuilder();
                 foreach (var kvPair in nameValueCollection)
                 {
-                    string _key = WebUtility.UrlEncode(kvPair.Key);
-                    string _value = WebUtility.UrlEncode(kvPair.Value);
+                    string _key = (urlEncodeKey) ? WebUtility.UrlEncode(kvPair.Key) : kvPair.Key;
+                    string _value = (urlEncodeValue) ? WebUtility.UrlEncode(kvPair.Value) : kvPair.Value;
                     string val = (_key != null) ? (_key + "=") : string.Empty;
 
                     if(sb.Length > 0)
