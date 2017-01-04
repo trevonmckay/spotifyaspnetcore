@@ -2,7 +2,7 @@
   "name":"Spotify.NET",
   "title": "Spotify.NET",
   "description": "A Spotify API wrapper written in C#",
-  "version": "0.1.0-alpha",
+  "version": "0.1.2-alpha",
   "authors": [
     "Tre`Von McKay"
   ],
