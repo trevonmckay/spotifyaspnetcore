@@ -159,11 +159,6 @@ namespace Spotify.NET
 
         public async Task<SPSearchResult> SearchAsync(string query, params SPItemType[] type)
         {
-            return await SearchAsync(query, type);
-        }
-
-        public async Task<SPSearchResult> SearchAsync(string query, IEnumerable<SPItemType> type)
-        {
             var typeList = new List<string>();
             if (type.Contains(SPItemType.Album))
                 typeList.Add("album");
@@ -184,16 +179,20 @@ namespace Spotify.NET
                 httpRequest.Headers.Authorization = new AuthenticationHeaderValue("Bearer", this.ClientToken.Value.AccessToken);
             }
             httpRequest.Method = HttpMethod.Get;
-            var parameters = new Dictionary<string,string>();
-            parameters.Add("q", q);
+            var requestUri = new UriBuilder(API_BASE_URL + SEARCH_RESOURCE_PATH);
+            requestUri.AddParameter("q", q);
             if (!string.IsNullOrWhiteSpace(types))
             {
-                parameters.Add("type", types);
+                requestUri.AddParameter("type", types);
             }
-            var queryString = parameters.ToQueryString();
-            httpRequest.RequestUri = new UriBuilder(API_BASE_URL + SEARCH_RESOURCE_PATH).Uri;
+            httpRequest.RequestUri = requestUri.Uri;
             var response = await httpClient.SendAsync(httpRequest);
             var responseBody = await response.Content.ReadAsStringAsync();
+
+            if(!response.IsSuccessStatusCode)
+            {
+                return null;
+            }
 
             try
             {
