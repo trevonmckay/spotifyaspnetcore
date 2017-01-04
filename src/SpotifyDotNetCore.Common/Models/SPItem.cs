@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace SpotifyAspNetCore.Common
+namespace SpotifyDotNetCore.Common
 {
     public class SPItemConverter : JsonConverter
     {

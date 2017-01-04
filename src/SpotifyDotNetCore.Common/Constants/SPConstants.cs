@@ -1,6 +1,6 @@
 using System.Runtime.Serialization;
 
-namespace SpotifyAspNetCore.Common
+namespace SpotifyDotNetCore.Common
 {
 	public enum ReturnCodes : int
         {

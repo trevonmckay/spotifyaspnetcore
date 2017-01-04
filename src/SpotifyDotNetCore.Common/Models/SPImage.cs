@@ -1,7 +1,7 @@
 using System;
 using Newtonsoft.Json;
 
-namespace SpotifyAspNetCore.Common
+namespace SpotifyDotNetCore.Common
 {
     public class SPImage
     {
