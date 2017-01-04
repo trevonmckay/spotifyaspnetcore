@@ -3,7 +3,7 @@ using System.Text;
 
 namespace Spotify.NET
 {
-    public static class IDictionaryExtensions
+    internal static class IDictionaryExtensions
     {
         public static string ToQueryString(this IDictionary<string, string> self)
         {

@@ -2,7 +2,7 @@ using Newtonsoft.Json.Converters;
 
 namespace Spotify.NET.Common
 {
-    public class SPDateTimeConverter: IsoDateTimeConverter
+    internal class SPDateTimeConverter: IsoDateTimeConverter
     {
         public SPDateTimeConverter()
         {
