@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SpotifyDotNetCore
+namespace Spotify.NET
 {
     public static class IDictionaryExtensions
     {

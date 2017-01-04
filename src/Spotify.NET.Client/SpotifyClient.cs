@@ -8,9 +8,9 @@ using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using SpotifyDotNetCore.Common;
+using Spotify.NET.Common;
 
-namespace SpotifyDotNetCore
+namespace Spotify.NET
 {
     public class SpotifyClient
     {

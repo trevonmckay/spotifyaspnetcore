@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace SpotifyDotNetCore.Common
+namespace Spotify.NET.Common
 {
     public class SPArtist: SPItem
     {

@@ -1,7 +1,7 @@
 {
-  "name":"SpotifyDotNetCore",
-  "title": "Spotify .NET Core",
-  "description": "A .NET Core compatible Spotify client",
+  "name":"Spotify.NET",
+  "title": "Spotify.NET",
+  "description": "A Spotify API wrapper written in C#",
   "version": "0.1.0-alpha",
   "authors": [
     "Tre`Von McKay"
@@ -16,9 +16,10 @@
     "owners": [
       "Tre`Von McKay"
     ],
+    "summary": "A Spotify API wrapper written in C#",
     "repository": {
       "type": "git",
-      "url": "https://github.com/trevonmckay/spotifydotnetcore"
+      "url": "https://github.com/trevonmckay/spotifydotnet"
     }
   },
   "code": ["**/*.cs", "../Common/**/*.cs"],

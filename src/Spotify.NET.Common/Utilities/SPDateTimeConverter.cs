@@ -1,6 +1,6 @@
 using Newtonsoft.Json.Converters;
 
-namespace SpotifyDotNetCore.Common
+namespace Spotify.NET.Common
 {
     public class SPDateTimeConverter: IsoDateTimeConverter
     {
