@@ -1,11 +1,21 @@
 {
   "version": "1.0.0-*",
+  "authors": [
+    "Tre`Von McKay"
+  ],
   "buildOptions": {
     "debugType": "portable"
   },
   "dependencies": {
-    "SpotifyAspNetCore.Common":{
-      "target":"project"
+    "Newtonsoft.Json": "9.0.1"
+  },
+  "packOptions": {
+    "owners": [
+      "Tre`Von McKay"
+    ],
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/trevonmckay/spotifyaspnetcore"
     }
   },
   "code": ["**/*.cs", "../Common/**/*.cs"],
